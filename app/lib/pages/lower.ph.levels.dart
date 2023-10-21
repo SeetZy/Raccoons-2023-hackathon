@@ -2,6 +2,8 @@
   * Library imports
  */
 import 'package:flutter/material.dart';
+import 'package:app/utils/nav.utils.dart';
+import 'package:app/utils/substance.data.dart';
 
 /*
   * Page/Component imports 
@@ -10,10 +12,6 @@ import 'package:app/components/substance.component.dart';
 
 class LowerPhLevels extends StatelessWidget {
   const LowerPhLevels({super.key});
-
-  void uhuh() {
-    Null;
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +24,7 @@ class LowerPhLevels extends StatelessWidget {
             padding: EdgeInsets.only(bottom: 25),
             child: Text(
               'Lower the pH level with substances',
-              style: TextStyle(fontSize: 23),
+              style: TextStyle(fontSize: 23, color: Colors.black),
               textAlign: TextAlign.center,
             ),
           ),
@@ -58,24 +56,44 @@ class LowerPhLevels extends StatelessWidget {
           ),
 
           SubstanceComponent(
-            title: 'Sulfuric Acid (H2SO4)',
-            pressed: uhuh,
+            title: SubstanceData.sulAcid,
+            desc: '',
+            pressed: () {
+              NavUtils.navigate(context, SubstanceData.sulAcid,
+                  SubstanceData.descSulAcid, 'Coming Soon!');
+            },
           ),
           SubstanceComponent(
-            title: 'Hydrochloric Acid (HCl)',
-            pressed: uhuh,
+            title: SubstanceData.hydAcid,
+            desc: '',
+            pressed: () {
+              NavUtils.navigate(context, SubstanceData.hydAcid,
+                  SubstanceData.descHydAcid, 'Coming Soon!');
+            },
           ),
           SubstanceComponent(
-            title: 'Phosphoric Acid (H3PO4)',
-            pressed: uhuh,
+            title: SubstanceData.phosAcid,
+            desc: '',
+            pressed: () {
+              NavUtils.navigate(context, SubstanceData.phosAcid,
+                  SubstanceData.descPhosAcid, 'Coming Soon!');
+            },
           ),
           SubstanceComponent(
-            title: 'Acetic Acid (CH3COOH)',
-            pressed: uhuh,
+            title: SubstanceData.aceAcid,
+            desc: '',
+            pressed: () {
+              NavUtils.navigate(context, SubstanceData.aceAcid,
+                  SubstanceData.descAceAcid, 'Coming Soon!');
+            },
           ),
           SubstanceComponent(
-            title: 'Citric Acid (C6H8O7)',
-            pressed: uhuh,
+            title: SubstanceData.citAcid,
+            desc: '',
+            pressed: () {
+              NavUtils.navigate(context, SubstanceData.citAcid,
+                  SubstanceData.descCitAcid, 'Coming Soon!');
+            },
           ),
         ],
       ),

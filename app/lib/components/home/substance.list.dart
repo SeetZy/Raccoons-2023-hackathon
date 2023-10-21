@@ -14,38 +14,57 @@ class SubstanceList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(20.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      padding: const EdgeInsets.only(top: 15, bottom: 35),
+      child: Table(
+        columnWidths: const {
+          0: IntrinsicColumnWidth(),
+          1: FlexColumnWidth(),
+        },
         children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          const TableRow(
             children: [
-              const Text(
-                'Substance:',
-                style: TextStyle(fontSize: 21.0),
-              ),
-              for (int i = 0; i < substances.length; i++)
-                Text(
-                  '${i + 1}. ${substances[i]}',
-                  style: const TextStyle(fontSize: 21.0),
+              TableCell(
+                child: Text(
+                  'Substances:',
+                  style: TextStyle(
+                      fontSize: 21.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black),
                 ),
+              ),
+              TableCell(
+                child: Center(
+                  child: Text(
+                    'Mass:',
+                    style: TextStyle(
+                        fontSize: 21.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black),
+                  ),
+                ),
+              ),
             ],
           ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Text(
-                'Mass:',
-                style: TextStyle(fontSize: 21.0),
-              ),
-              for (int i = 0; i < masses.length; i++)
-                Text(
-                  masses[i],
-                  style: const TextStyle(fontSize: 21.0),
+          for (int i = 0; i < substances.length; i++)
+            TableRow(
+              children: [
+                TableCell(
+                  child: Text(
+                    substances[i],
+                    style: const TextStyle(fontSize: 21.0, color: Colors.black),
+                  ),
                 ),
-            ],
-          ),
+                TableCell(
+                  child: Center(
+                    child: Text(
+                      masses[i],
+                      style:
+                          const TextStyle(fontSize: 21.0, color: Colors.black),
+                    ),
+                  ),
+                ),
+              ],
+            ),
         ],
       ),
     );

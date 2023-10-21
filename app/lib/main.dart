@@ -26,23 +26,24 @@ class App extends StatefulWidget {
 
 class _AppState extends State<App> {
   int _selectedIndex = 0;
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.w600);
+
   static const List<Widget> _widgetOptions = <Widget>[
     HomePage(),
     RaisePhLevels(),
     LowerPhLevels(),
-    Text(
-      'Settings',
-      style: optionStyle,
-    ),
   ];
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        // Sets the application to dark mode
+        colorScheme:
+            const ColorScheme.dark(primary: GlobalVariables.primaryColor),
+      ),
       home: Scaffold(
+        backgroundColor: Colors.white,
         appBar: AppBar(
           backgroundColor: GlobalVariables.navColor,
           title: const Text(
@@ -92,10 +93,6 @@ class _AppState extends State<App> {
                     GButton(
                       icon: Icons.library_books_outlined,
                       text: 'Lower pH levels',
-                    ),
-                    GButton(
-                      icon: Icons.settings,
-                      text: 'Settings',
                     ),
                   ],
                   selectedIndex: _selectedIndex,

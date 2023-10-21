@@ -2,6 +2,8 @@
   * Library imports
  */
 import 'package:flutter/material.dart';
+import 'package:app/utils/nav.utils.dart';
+import 'package:app/utils/substance.data.dart';
 
 /*
   * Page/Component imports 
@@ -10,10 +12,6 @@ import 'package:app/components/substance.component.dart';
 
 class RaisePhLevels extends StatelessWidget {
   const RaisePhLevels({super.key});
-
-  void uhuh() {
-    Null;
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +24,7 @@ class RaisePhLevels extends StatelessWidget {
             padding: EdgeInsets.only(bottom: 25),
             child: Text(
               'Raise the pH level with substances',
-              style: TextStyle(fontSize: 23),
+              style: TextStyle(fontSize: 23, color: Colors.black),
               textAlign: TextAlign.center,
             ),
           ),
@@ -58,24 +56,44 @@ class RaisePhLevels extends StatelessWidget {
           ),
 
           SubstanceComponent(
-            title: 'Magnesium Hydroxide Slurry',
-            pressed: uhuh,
+            title: SubstanceData.magHyd,
+            desc: '',
+            pressed: () {
+              NavUtils.navigate(context, SubstanceData.magHyd,
+                  SubstanceData.descMagHyd, 'Coming Soon!');
+            },
           ),
           SubstanceComponent(
-            title: 'Ammonium Hydroxide (NH4OH)',
-            pressed: uhuh,
+            title: SubstanceData.ammHyd,
+            desc: '',
+            pressed: () {
+              NavUtils.navigate(context, SubstanceData.ammHyd,
+                  SubstanceData.descAmmHyd, 'Coming Soon!');
+            },
           ),
           SubstanceComponent(
-            title: 'Potassium Hydroxide (KOH)',
-            pressed: uhuh,
+            title: SubstanceData.potHyd,
+            desc: '',
+            pressed: () {
+              NavUtils.navigate(context, SubstanceData.potHyd,
+                  SubstanceData.descpotHyd, 'Coming Soon!');
+            },
           ),
           SubstanceComponent(
-            title: 'Sodium Carbonate (Soda Ash)',
-            pressed: uhuh,
+            title: SubstanceData.sodCar,
+            desc: '',
+            pressed: () {
+              NavUtils.navigate(context, SubstanceData.sodCar,
+                  SubstanceData.descSodCar, 'Coming Soon!');
+            },
           ),
           SubstanceComponent(
-            title: 'Lime Slurry',
-            pressed: uhuh,
+            title: SubstanceData.limeSl,
+            desc: '',
+            pressed: () {
+              NavUtils.navigate(context, SubstanceData.limeSl,
+                  SubstanceData.descLimeSl, 'Coming Soon!');
+            },
           ),
         ],
       ),

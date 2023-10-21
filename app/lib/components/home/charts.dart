@@ -61,6 +61,7 @@ class ChartsView extends StatelessWidget {
               dataSource: data,
               xValueMapper: (_DataLevels stats, _) => stats.timeSpace,
               yValueMapper: (_DataLevels stats, _) => stats.data,
+              dataLabelSettings: const DataLabelSettings(isVisible: true),
             ),
           ],
         ),

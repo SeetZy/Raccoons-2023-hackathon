@@ -2,6 +2,7 @@
   * Library imports
  */
 import 'package:flutter/material.dart';
+import 'package:app/utils/substance.data.dart';
 
 /*
   * Page/Component imports
@@ -25,12 +26,16 @@ class SuggestedSubstances extends StatelessWidget {
     if (SoilpHLevels.currSoilPh > SoilpHLevels.wantedSoilPh) {
       return [
         const Text(
-          'Substances to reduce current pH levels per square meter:',
-          style: TextStyle(fontSize: 22),
+          'Substances to reduce current pH levels (grams per square meter):',
+          style: TextStyle(fontSize: 22, color: Colors.black),
         ),
         const SubstanceList(
-          substances: ['Sulfur Dioxide', 'Postassium', 'Calcium'],
-          masses: ['2 grams', '10 grams', '8 grams'],
+          substances: [
+            SubstanceData.sulAcid,
+            SubstanceData.hydAcid,
+            SubstanceData.phosAcid
+          ],
+          masses: ['2 g', '10 g', '8 g'],
         ),
       ];
 
@@ -38,12 +43,16 @@ class SuggestedSubstances extends StatelessWidget {
     } else if (SoilpHLevels.currSoilPh < SoilpHLevels.wantedSoilPh) {
       return [
         const Text(
-          'Substances to increase current pH levels per square meter:',
-          style: TextStyle(fontSize: 22),
+          'Substances to increase current pH levels (grams per square meter):',
+          style: TextStyle(fontSize: 22, color: Colors.black),
         ),
         const SubstanceList(
-          substances: ['Sulfur Dioxide', 'Postassium', 'Calcium'],
-          masses: ['2 grams', '10 grams', '8 grams'],
+          substances: [
+            SubstanceData.magHyd,
+            SubstanceData.ammHyd,
+            SubstanceData.potHyd
+          ],
+          masses: ['2 g', '10 g', '8 g'],
         )
       ];
 
@@ -52,7 +61,7 @@ class SuggestedSubstances extends StatelessWidget {
       return [
         const Text(
           'There is no need to change the soil pH level',
-          style: TextStyle(fontSize: 22),
+          style: TextStyle(fontSize: 22, color: Colors.black),
         ),
       ];
     }

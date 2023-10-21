@@ -7,7 +7,7 @@ import 'package:app/utils/global.vars.dart';
 class SoilpHLevels extends StatelessWidget {
   const SoilpHLevels({super.key});
 
-  static const currSoilPh = 9;
+  static const currSoilPh = 5;
   static const wantedSoilPh = 6;
 
   @override
@@ -25,7 +25,7 @@ class SoilpHLevels extends StatelessWidget {
             padding: EdgeInsets.all(8),
             child: Text(
               'Current soil pH:\n$currSoilPh',
-              style: TextStyle(fontSize: 22, color: Colors.white),
+              style: TextStyle(fontSize: 22),
             ),
           ),
         ),
@@ -40,7 +40,7 @@ class SoilpHLevels extends StatelessWidget {
             padding: EdgeInsets.all(8),
             child: Text(
               'Needed soil pH:\n$wantedSoilPh',
-              style: TextStyle(fontSize: 22, color: Colors.white),
+              style: TextStyle(fontSize: 22),
             ),
           ),
         )
