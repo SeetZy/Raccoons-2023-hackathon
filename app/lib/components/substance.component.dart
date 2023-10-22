@@ -1,6 +1,7 @@
 /*
   * Library import
  */
+import 'package:app/utils/global.vars.dart';
 import 'package:flutter/material.dart';
 
 /*
@@ -28,7 +29,11 @@ class SubstanceComponent extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           // Button to navigate to the description page
-          OptionsButtons(pressed: pressed, title: 'Info'),
+          OptionsButtons(
+            pressed: pressed,
+            title: 'Info',
+            color: GlobalVariables.secondaryColor,
+          ),
 
           // Substance name
           Container(

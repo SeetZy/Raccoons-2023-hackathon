@@ -47,7 +47,7 @@ class _AppState extends State<App> {
         appBar: AppBar(
           backgroundColor: GlobalVariables.navColor,
           title: const Text(
-            "Soil pH System",
+            "4 Graudi pH Monitoring",
             style: TextStyle(color: Colors.white),
           ),
         ),

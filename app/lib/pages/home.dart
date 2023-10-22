@@ -65,13 +65,6 @@ class HomePage extends StatelessWidget {
                     title: "pH Levels:",
                     btnPressed: () {},
                   ),
-                  const SizedBox(
-                    height: 30,
-                  ),
-                  ChartsView(
-                    title: "Moisture\nLevels:",
-                    btnPressed: () {},
-                  ),
                 ],
               ),
             ),
